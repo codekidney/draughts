@@ -1,0 +1,108 @@
+@import "reset.scss";
+@import "mixins.scss";
+@import "media-queries.scss";
+
+/* Colors */
+$brown: #613B2E;
+$boardColor: $brown;
+$black: hsl(0,0,30%);
+$fildEvenColor: lighten($brown, 20%);
+$fildOddColor: lighten($brown, 40%);
+$gutter: 15px;
+
+.container {
+    margin: 0 auto;
+}
+
+.board {
+    margin: 0 auto;
+    background-color: $boardColor;
+    border: 1px solid $boardColor;
+    position: relative;
+    width: 360px;
+    height: 360px;
+    @include tablet-portrait-and-below {
+        width: 360px;
+        height: 360px;
+    }
+    @include mobile-portrait-and-below {
+        width: 300px;
+        height: 300px;
+    }
+    .field {
+        content: '\A';
+        display: block;
+        float: left;
+        background-image: url('../images/wood-pattern.png');
+        @include box-shadow( inset 0px 0px 0px 1px $boardColor);
+        &.odd {
+            background-color: $fildOddColor;
+        }
+        &.even {
+            background-color: $fildEvenColor;
+        }
+    }
+    .pawn {
+        content: '\A';
+        // position: absolute;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        &:after {
+          content: '\A';
+          width: 60%;
+          height: 60%;
+          display: block;
+          margin: 0 auto;
+          border-radius: 50%;
+        }
+        &.odd:after {
+            background-color: hsl(0, 0%, 20%);    
+            box-shadow: 1px 2px 0px hsl(0, 0%, 30%);    
+        }
+        &.even:after {
+            background-color: hsl(0, 0%, 100%);    
+            box-shadow: 1px 2px 0px hsl(0, 0%, 80%);    
+        }
+    }
+}
+
+.score {
+    width: 360px;
+    margin: 0 auto;
+    font-family: sans-serif;
+    margin-top: 2*$gutter;
+    &__players {
+        display: flex;
+        justify-content: space-around;
+    }
+    &__player {
+        border: 1px solid $black;
+        padding: $gutter;
+        @include border-radius($gutter);
+        p {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        &__label {
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: $gutter/2;
+            strong {
+                font-weight: bold;
+            }
+        }
+        &__value {
+            font-weight: bold;
+            font-size: 28px;
+        }
+    }
+    &__message {
+        text-align: center;
+        margin-top: $gutter;
+    }
+}

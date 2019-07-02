@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="board" class="board"></div>
+        <div id="board_score" class="score">
+            <div class="score__players">
+                <div class="score__player">
+                    <p>
+                        <span class="score__player__label">Player: <strong>White</strong></span>
+                        <span class="score__player__value" id="score_white">0</span>
+                    </p>
+                </div>
+                <div class="score__player">
+                    <p>
+                        <span class="score__player__label">Player: <strong>Black</strong></span>
+                        <span class="score__player__value" id="score_black">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="score__message">
+                <p id="score_message"></p>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/interact.min.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* Colors */
+.container {
+  margin: 0 auto; }
+
+.board {
+  margin: 0 auto;
+  background-color: #613B2E;
+  border: 1px solid #613B2E;
+  position: relative;
+  width: 360px;
+  height: 360px; }
+  @media only screen and (max-width: 768px) {
+    .board {
+      width: 360px;
+      height: 360px; } }
+  @media (max-width: 320px) {
+    .board {
+      width: 300px;
+      height: 300px; } }
+  .board .field {
+    content: '\A';
+    display: block;
+    float: left;
+    background-image: url("../images/wood-pattern.png");
+    -webkit-box-shadow: inset 0px 0px 0px 1px #613B2E;
+    -moz-box-shadow: inset 0px 0px 0px 1px #613B2E;
+    box-shadow: inset 0px 0px 0px 1px #613B2E; }
+    .board .field.odd {
+      background-color: #cb9f90; }
+    .board .field.even {
+      background-color: #a6654f; }
+  .board .pawn {
+    content: '\A';
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center; }
+    .board .pawn:after {
+      content: '\A';
+      width: 60%;
+      height: 60%;
+      display: block;
+      margin: 0 auto;
+      border-radius: 50%; }
+    .board .pawn.odd:after {
+      background-color: #333333;
+      box-shadow: 1px 2px 0px #4d4d4d; }
+    .board .pawn.even:after {
+      background-color: white;
+      box-shadow: 1px 2px 0px #cccccc; }
+
+.score {
+  width: 360px;
+  margin: 0 auto;
+  font-family: sans-serif;
+  margin-top: 30px; }
+  .score__players {
+    display: flex;
+    justify-content: space-around; }
+  .score__player {
+    border: 1px solid #4d4d4d;
+    padding: 15px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px; }
+    .score__player p {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+    .score__player__label {
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 7.5px; }
+      .score__player__label strong {
+        font-weight: bold; }
+    .score__player__value {
+      font-weight: bold;
+      font-size: 28px; }
+  .score__message {
+    text-align: center;
+    margin-top: 15px; }
